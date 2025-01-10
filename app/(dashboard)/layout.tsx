@@ -2,6 +2,7 @@ import BreadCrumb from "@/components/shared/BreadCrumb";
 import Sidebar from "@/components/shared/Sidebar";
 import { ModeToggle } from "@/components/shared/Theme";
 import { Separator } from "@/components/ui/separator";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
@@ -11,8 +12,17 @@ const layout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex flex-col flex-1 min-h-screen">
         <header className="flex items-center justify-between px-6 py-4 h-[50px] container">
           <BreadCrumb />
-          <div className="gap-1 flex items-center">
+          <div className="gap-3 flex items-center">
             <ModeToggle />
+            <SignedIn>
+              <UserButton 
+              appearance={{
+                elements: {
+                  avatarBox: "h-10 w-10"
+                },
+              }}
+              />
+            </SignedIn>
           </div>
         </header>
         <Separator />
