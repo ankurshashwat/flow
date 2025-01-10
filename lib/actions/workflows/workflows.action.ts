@@ -41,20 +41,11 @@ export async function createWorkflow(form: createWorkflowSchemaType) {
     throw new Error("Unauthenticated");
   }
 
-  // const initialFlow: { nodes: AppNode[]; edges: Edge[] } = {
-  //   nodes: [],
-  //   edges: [],
-  // };
-
-  //add the flow entry point
-  // initialFlow.nodes.push(createFlowNode(TaskType.LAUNCH_BROWSER));
-
   const result = await prisma.workflow.create({
     data: {
       userId,
       status: WorkflowStatus.DRAFT,
       definition: "TODO",
-      // definition: JSON.stringify(initialFlow),
       ...data,
     },
   });
