@@ -14,7 +14,7 @@ const Mobile = () => {
   const pathname = usePathname();
   const activeRoute =
     routes.find(
-      (route) => route.href.length > 0 && pathname.includes(route.href)
+      (route) => route.href.length > 1 && pathname.includes(route.href)
     ) || routes[0];
 
   return (
