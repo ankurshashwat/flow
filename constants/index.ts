@@ -2,7 +2,7 @@ import { CoinsIcon, HomeIcon, Layers2Icon, ShieldCheckIcon } from "lucide-react"
 
 export const routes = [
   {
-    href: "",
+    href: "/",
     label: "Home",
     icon: HomeIcon,
   },
